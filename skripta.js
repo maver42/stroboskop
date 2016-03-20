@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
 		document.querySelector("barve").innerHTML = "";
 	}
 	
-	document.querySelector("#odstraniBarvo").addEventListener('click', odstraniBarve);
+	document.querySelector("#odstraniBarve").addEventListener('click', odstraniBarve);
 	
 	//Stroboskop
 	var vrednosti = [];
@@ -39,6 +39,10 @@ window.addEventListener('load', function() {
 	
 	var stop = function(event) {
 		ustavi = true;
+		var start = document.querySelector("#start");
+		start.innerHTML = "Zaženi stroboskop";
+		start.removeEventListener('click', stop);
+		start.addEventListener('click', zagon);
 	}
 	
 	var zagon = function(event) {
